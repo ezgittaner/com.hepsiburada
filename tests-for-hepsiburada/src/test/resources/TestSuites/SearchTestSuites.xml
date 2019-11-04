@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SearchTest" verbose="1" parallel="tests" thread-count="1" >
+
+	
+	<test name="SearchTest-CH">
+	<parameter name="anything" value="Çantalar"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.hepsiburada.searchTest.SearchTest">
+			</class>
+		</classes>
+	</test>
+	</suite>

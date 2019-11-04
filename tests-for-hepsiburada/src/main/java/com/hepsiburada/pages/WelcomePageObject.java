@@ -7,15 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class WelcomePageObject extends BasePageObject {
 
 	private String pageUrl = "https://www.hepsiburada.com/";
-	private By newRoom = By.cssSelector("#searchBoxForm > div.sbc-body > div:nth-child(5) > div:nth-child(1) > a");
-	private By deleteRoom = By
-			.cssSelector("#searchBoxForm > div.sbc-body > div:nth-child(5) > div:nth-child(1) > div > label > span");
-	private By search = By
-			.cssSelector("#vueApp > div.home-top-search-box > div > div > div > div > div.col-xs-4 > div > input");
-	private By selectCity = By.cssSelector(
-			"#vueApp > div.home-top-search-box > div > div > div > div > div.col-xs-4 > div > div > div > ul > li:nth-child(1) > a > span");
-	private By searchButton = By
-			.cssSelector("#vueApp > div.home-top-search-box > div > div > div > div > div.col-xs-2 > button");
+	private By searchArea = By.cssSelector("input#productSearch");
+	private By searchButton = By.cssSelector("button#buttonProductSearch");
 
 	public WelcomePageObject(WebDriver driver, Logger log) {
 		super(driver, log);
@@ -28,34 +21,21 @@ public class WelcomePageObject extends BasePageObject {
 		log.info("Page opened!");
 	}
 
-	public WelcomePageObject clickNewRoomLink() {
-		log.info("Clicking New Room on Welcome Page");
-		click(newRoom);
+	public WelcomePageObject searchArea() {
+		log.info("Clicking Search Area");
+		click(searchArea);
 		return new WelcomePageObject(driver, log);
+
 	}
 
-	public WelcomePageObject clickDeleteRoomLink() {
-		log.info("Clicking Delete Room on Welcome Page");
-		click(deleteRoom);
-		return new WelcomePageObject(driver, log);
-	}
-
-	public WelcomePageObject clickSearchLink() {
-		log.info("Clicking search on Welcome Page");
-		click(search);
-		return new WelcomePageObject(driver, log);
-	}
-
-	public void searchOtel(String cityname) {
-		type(cityname, search);
-		waitForVisibilityOf(selectCity, 3);
-		click(selectCity);
-	}
-
-	public WelcomePageObject clickSearchButton() {
-		log.info("Clicking search button Welcome Page");
+	public WelcomePageObject searchButton() {
+		log.info("Clicking Search Button");
 		click(searchButton);
 		return new WelcomePageObject(driver, log);
+	}
+
+	public void searchAnything(String anything) {
+		type(anything, searchArea);
 	}
 
 }
