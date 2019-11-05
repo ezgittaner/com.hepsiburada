@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LogInTest" verbose="1" parallel="tests" thread-count="2" >
+
+	
+	<test name="LogInTest-CH">
+	<parameter name="mail" value="automationfortests@gmail.com"></parameter>
+	<parameter name="password2" value="testsFoRhEPSİbURADA1"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.hepsiburada.logInTest.LogInTest">
+			</class>
+		</classes>
+	</test>
+	
+		<test name="LogInTest-FF">
+	<parameter name="mail" value="automationfortests@gmail.com"></parameter>
+	<parameter name="password2" value="testsFoRhEPSİbURADA1"></parameter>
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.hepsiburada.logInTest.LogInTest">
+			</class>
+		</classes>
+	</test>
+	
+	</suite>
